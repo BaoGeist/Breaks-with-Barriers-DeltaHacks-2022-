@@ -34,7 +34,7 @@ def function_prod():
 #counts down the time for productivity, branaches off from function_prod()
 def function_prod_isolated(hours, minutes):
     time_s = int(hours) * 3600 + int(minutes) * 60
-    for i in range(time_s, 0, -5):
+    for i in range(time_s, 0, -1):
         hours = int(i/3600)
         minutes = int((i-3600*hours)/60)
         seconds = i - hours * 3600 - minutes * 60 
@@ -51,7 +51,7 @@ def function_break():
     hours = entBreakHour.get()
     minutes = entBreakMin.get()
     time_s = int(hours) * 3600 + int(minutes) * 60
-    for i in range(time_s, 0, -5):
+    for i in range(time_s, 0, -1):
         hours = int(i/3600)
         minutes = int((i-3600*hours)/60)
         seconds = i - hours * 3600 - minutes * 60 
