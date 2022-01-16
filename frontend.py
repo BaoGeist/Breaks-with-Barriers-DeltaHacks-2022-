@@ -13,6 +13,7 @@ boolBreak = False
 global lstTask
 
 #functions
+#starts the productivity session
 def function_prod():
     global boolProd
     boolProd = True
@@ -30,7 +31,7 @@ def function_prod():
     thread2 = threading.Thread(target = function_prod_isolated, args = (hours, minutes))
     thread2.start()
 
-#counts down the time for productivity
+#counts down the time for productivity, branaches off from function_prod()
 def function_prod_isolated(hours, minutes):
     time_s = int(hours) * 3600 + int(minutes) * 60
     for i in range(time_s, 0, -5):
@@ -44,7 +45,7 @@ def function_prod_isolated(hours, minutes):
     function_prod_popup()
     function_break()
 
-#counts down the time for a break
+#counts down the time for a break, is called by function_prod_isolated()
 def function_break():
     global boolBreak
     hours = entBreakHour.get()
@@ -65,6 +66,7 @@ def function_break():
     lblSocialsImage.grid()
     sys.exit()
 
+#creates a pop-up function for when productivity ends to alert the user
 def function_prod_popup():
     topProd = tk.Toplevel(root)
     topProd.geometry("750x250")
