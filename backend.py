@@ -7,7 +7,7 @@ from datetime import datetime
 import requests
 from twilio.rest import Client
 
-#function to start break, SHOULD NAVIGATE USERS TO AVAILBLE STUDENTS
+#function to message the user given a number and a message
 def function_message(number, message):
     account_sid = 'AC034ad1797070215a35dc3578bd033fbb'
     auth_token = '872de64fad709916fb7b44ac962dc32b'
